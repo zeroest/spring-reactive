@@ -10,10 +10,8 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":car-domain"))
-
-    // Mongo embedded
-//    implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo:4.3.3")
+//    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
+//    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
 tasks.getByName<Test>("test") {

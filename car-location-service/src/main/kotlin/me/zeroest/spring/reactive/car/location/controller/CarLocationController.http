@@ -1,0 +1,7 @@
+### getCars()
+GET http://localhost:8081/cars
+Content-Type: application/json
+
+### getCarStream()
+GET http://localhost:8081/cars
+Accept: application/stream+json

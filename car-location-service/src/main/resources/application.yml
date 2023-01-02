@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+logging:
+  pattern:
+    console: '[%thread] %date{mm:ss} %logger{0}: %msg%n'
+  level:
+    org:
+      mongodb: INFO
+      springframework:
+        web: DEBUG
+#        boot:autoconfigure:mongo:embedded: ERROR
+    reactor:
+      netty: DEBUG
+  #logging.level.reactor.Flux=INFO
+  #logging.level.reactor.Mono=INFO
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mydb
+      username: mydbroot
+      password: pwd
+#      uri: 'mongodb://mydbroot:pwd@localhost:27017'
+
+#  http:
+#    log-request-details: true
+#  reactor:
+#    stacktrace-mode:
+#      enabled: false
+
