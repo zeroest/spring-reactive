@@ -28,8 +28,17 @@ subprojects {
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "kotlin-kapt")
 
+    val developmentOnly = configurations.create("developmentOnly")
+    configurations {
+        runtimeClasspath {
+            extendsFrom(developmentOnly)
+        }
+        compileOnly {
+            extendsFrom(configurations.annotationProcessor.get())
+        }
+    }
+
     dependencies {
-        implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
         implementation("org.springframework.boot:spring-boot-starter-web")
         implementation("org.springframework.boot:spring-boot-starter-webflux")
 
@@ -39,15 +48,18 @@ subprojects {
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-        developmentOnly("org.springframework.boot:spring-boot-devtools")
-        testImplementation("org.springframework.boot:spring-boot-starter-test")
-        testImplementation("io.projectreactor:reactor-test")
+        // Kotlin 로깅
+        implementation("io.github.microutils:kotlin-logging:1.12.5")
+
+        implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
 
         // H2DB
         runtimeOnly("com.h2database:h2")
 
-        // Kotlin 로깅
-        implementation("io.github.microutils:kotlin-logging:1.12.5")
+        developmentOnly("org.springframework.boot:spring-boot-devtools")
+        testImplementation("org.springframework.boot:spring-boot-starter-test")
+        testImplementation("io.projectreactor:reactor-test")
+        testImplementation("org.jetbrains.kotlin", "kotlin-test-junit5", "1.3.72")
     }
 
     dependencyManagement {
