@@ -1,3 +1,8 @@
+
+### getCarsBlock()
+GET http://localhost:8081/cars/block
+Content-Type: application/json
+
 ### getCars()
 GET http://localhost:8081/cars
 Content-Type: application/json

@@ -1,9 +1,15 @@
 server:
   port: 8081
+  tomcat:
+    threads:
+      max: 1
+    accept-count: 0
+
+
 
 logging:
   pattern:
-    console: '[%thread] %date{mm:ss} %logger{0}: %msg%n'
+    console: '[%thread] %date{mm:ss:ms} %logger{0}: %msg%n'
   level:
     org:
       mongodb: INFO
