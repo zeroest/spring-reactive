@@ -39,3 +39,5 @@ db.createUser({
 [[Doc] Built-in Roles](https://www.mongodb.com/docs/manual/reference/built-in-roles/)
 
 [[Doc] MongoReactiveDataAutoConfiguration](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.html)
+
+[[Doc] Tailable Cursors](https://www.mongodb.com/docs/manual/core/tailable-cursors/)
