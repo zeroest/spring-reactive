@@ -3,6 +3,8 @@
 
 # Reference
 
+[[Doc] Spring WebFlux](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#spring-webflux)
+
 [Servlet and Reactive Stacks in Spring Framework 5](https://www.infoq.com/articles/Servlet-and-Reactive-Stacks-Spring-Framework-5/)
 
 [Servlet or Reactive Stack: you have choices...](https://www.infoq.com/presentations/spring-servlet-reactive-streams/)
@@ -90,8 +92,8 @@ Sync 방식으로 block 되어 1개의 tomcat thread를 경합하여 사용
 
 ### WebFlux type single request
 
-- `@GetMapping("/cars")`
-- `fun getCars(): Flux<Car>`
+`@GetMapping("/cars")`
+`fun getCars(): Flux<Car>`
 
 [Detail log history](README/log/tomcat_webflux_delay_single.log)
 
@@ -116,11 +118,11 @@ Sync 방식으로 block 되어 1개의 tomcat thread를 경합하여 사용
 [http-nio-8081-exec-1] 59:22:5922 DispatcherServlet: Exiting from "ASYNC" dispatch, status 200
 ```
 
-WebFlux type delay multi request
+### WebFlux type delay multi request
 
-- `@GetMapping("/cars")`
-- `fun getCars(): Flux<Car>`
-- `delaySubscription(Duration.ofSeconds(2))`
+`@GetMapping("/cars")`
+`fun getCars(): Flux<Car>`
+`delaySubscription(Duration.ofSeconds(2))`
 
 - Tomcat thread config
 
@@ -160,11 +162,11 @@ tomcat thread는 다시 context를 이어받아 response 처리하도록 한다
 
 ---
 
-WebFlux type json stream single request
+### WebFlux type json stream single request
 
-- `curl -v -X GET -H "Accept:application/stream+json" http://localhost:8081/cars`
-- `@GetMapping(path = ["/cars"], produces = ["application/stream+json"])`
-- `fun getCarStream(): Flux<Car>`
+`curl -v -X GET -H "Accept:application/stream+json" http://localhost:8081/cars`
+`@GetMapping(path = ["/cars"], produces = ["application/stream+json"])`
+`fun getCarStream(): Flux<Car>`
 
 [Detail log history](README/log/tomcat_webflux_json_stream_single.log)
 
