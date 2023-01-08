@@ -1,0 +1,14 @@
+[reactor-http-nio-2] 09:10:910 HttpServerOperations: [07f437a1, L:/127.0.0.1:8081 - R:/127.0.0.1:54050] New http connection, requesting read
+[reactor-http-nio-2] 09:10:910 TransportConfig: [07f437a1, L:/127.0.0.1:8081 - R:/127.0.0.1:54050] Initialized pipeline DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+[reactor-http-nio-2] 09:10:910 HttpServerOperations: [07f437a1, L:/127.0.0.1:8081 - R:/127.0.0.1:54050] Increasing pending responses, now 1
+[reactor-http-nio-2] 09:10:910 HttpServer: [07f437a1-1, L:/127.0.0.1:8081 - R:/127.0.0.1:54050] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@6dc3e52c
+[reactor-http-nio-2] 09:10:910 HttpWebHandlerAdapter: [07f437a1-1] HTTP GET "/car"
+[reactor-http-nio-2] 09:10:910 RequestMappingHandlerMapping: [07f437a1-1] Mapped to me.zeroest.spring.reactive.car.location.controller.CarLocationController#getCar()
+[reactor-http-nio-2] 09:13:913 ResponseBodyResultHandler: [07f437a1-1] Using 'application/json' given [*/*] and supported [application/json, application/*+json, application/x-ndjson, text/event-stream]
+[reactor-http-nio-2] 09:13:913 ResponseBodyResultHandler: [07f437a1-1] 0..1 [me.zeroest.spring.reactive.car.Car]
+[reactor-http-nio-2] 09:13:913 HttpLogging: [07f437a1-1] Encoding [Car(id=1, location=Location(longitude=40.740824, latitude=-73.987952))]
+[reactor-http-nio-2] 09:13:913 HttpServerOperations: [07f437a1-1, L:/127.0.0.1:8081 - R:/127.0.0.1:54050] Decreasing pending responses, now 0
+[reactor-http-nio-2] 09:13:913 HttpServerOperations: [07f437a1-1, L:/127.0.0.1:8081 - R:/127.0.0.1:54050] Last HTTP packet was sent, terminating the channel
+[reactor-http-nio-2] 09:13:913 HttpWebHandlerAdapter: [07f437a1-1] Completed 200 OK
+[reactor-http-nio-2] 09:13:913 HttpServerOperations: [07f437a1-1, L:/127.0.0.1:8081 - R:/127.0.0.1:54050] Last HTTP response frame
+[reactor-http-nio-2] 09:14:914 ServerTransport: [07f437a1, L:/127.0.0.1:8081 - R:/127.0.0.1:54050] onUncaughtException(SimpleConnection{channel=[id: 0x07f437a1, L:/127.0.0.1:8081 - R:/127.0.0.1:54050]})

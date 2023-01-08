@@ -1,6 +1,7 @@
 package me.zeroest.spring.reactive.car.location.controller
 
 import me.zeroest.spring.reactive.car.Car
+import me.zeroest.spring.reactive.car.LocationGenerator
 import me.zeroest.spring.reactive.car.location.repository.CarRepository
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
@@ -19,6 +20,14 @@ class CarLocationController(
             .delaySubscription(Duration.ofSeconds(3))
             .log()
             .blockLast()
+    }
+
+    @GetMapping("/car")
+    fun getCar(): Car {
+        val location = LocationGenerator(40.740900, -73.988000)
+
+        Thread.sleep(3000L)
+        return Car(1, location.location())
     }
 
     @GetMapping("/cars")
